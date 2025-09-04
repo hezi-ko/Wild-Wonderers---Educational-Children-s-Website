@@ -1,0 +1,27 @@
+.container {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  background-color: #6b8e23;
+  color: white;
+  padding: 20px;
+  margin: 20px auto;
+  border: none;
+  border-radius: 20px;
+  font-size: 24px;
+  width: 300px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #888888;
+}
+body {
+  background-image: url("../media/images/G_background.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+}

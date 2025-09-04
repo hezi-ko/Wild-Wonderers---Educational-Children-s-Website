@@ -1,0 +1,301 @@
+/* Main block for FlipBook style */
+
+/* Layout */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 25px; /* Adjust this value to control the distance from the top */
+  padding-bottom: 80px; /* Adjust this value to control the distance from the bottom */
+}
+
+/* FlipBook */
+.book {
+  position: relative;
+  display: flex;
+  width: 60cqmin;
+  /*1* Let pointer event go through pages of lower Z than .book */
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transition: translate 1s;
+  translate: calc(min(var(--c), 1) * 50%) 0%;
+  /* Incline on the X axis for pages preview */
+  rotate: 1 0 0 30deg;
+  box-sizing: border-box;
+  counter-reset: page -2;
+  & a {
+    color: inherit;
+  }
+}
+
+.page {
+  /* PS: Don't go below thickness 0.5 or the pages might be transparent */
+  --thickness: 4;
+  flex: none;
+  display: flex;
+  width: 100%;
+  font-size: 3cqmin;
+  /*1* Allow pointer events on pages */
+  pointer-events: all;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 1s,
+    rotate 1s ease-in
+      calc((min(var(--i), var(--c)) - max(var(--i), var(--c))) * 50ms);
+  translate: calc(var(--i) * -100%) 0px 0px;
+  transform: translateZ(
+    calc((var(--c) - var(--i) - 0.5) * calc(var(--thickness) * 0.23cqmin))
+  );
+  rotate: 0 1 0 calc(clamp(0, var(--c) - var(--i), 1) * -180deg);
+  box-sizing: border-box;
+  box-shadow: 0em 0.5em 1em -0.2em #00000020;
+}
+
+.firstpage {
+  /* PS: Don't go below thickness 0.5 or the pages might be transparent */
+  --thickness: 4;
+  flex: none;
+  display: flex;
+  width: 100%;
+  font-size: 3cqmin;
+  /*1* Allow pointer events on pages */
+  pointer-events: all;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 1s,
+    rotate 1s ease-in
+      calc((min(var(--i), var(--c)) - max(var(--i), var(--c))) * 50ms);
+  translate: calc(var(--i) * -100%) 0px 0px;
+  transform: translateZ(
+    calc((var(--c) - var(--i) - 0.5) * calc(var(--thickness) * 0.23cqmin))
+  );
+  rotate: 0 1 0 calc(clamp(0, var(--c) - var(--i), 1) * -180deg);
+  box-sizing: border-box;
+  box-shadow: 0em 0.5em 1em -0.2em #00000020;
+}
+
+/* Page Content */
+.front,
+.back {
+  position: relative;
+  flex: none;
+  width: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 2em;
+
+  &:has(img) {
+    padding: 0;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 1em;
+    counter-increment: page;
+    content: counter(page) "";
+    font-size: 20px;
+  }
+}
+
+.back {
+  translate: -100% 0;
+  rotate: 0 1 0 180deg;
+}
+
+.page:nth-child(1) .front::after,
+.page:nth-child(1) .back::after {
+  content: ""; /* Hide page number on page 0 */
+}
+
+.firstpage:nth-child(1) .front::after,
+.firstpage:nth-child(1) .back::after {
+  content: ""; /* Hide page number on page 0 */
+}
+
+/* 隱藏最後一頁的正面和反面的頁碼 */
+.page:nth-last-child(1) .front::after,
+.page:nth-last-child(1) .back::after {
+  content: ""; /* 隱藏頁碼 */
+}
+
+/* Cover Styles  */
+.cover {
+  &::after {
+    content: "";
+  }
+}
+.front {
+  &::after {
+    right: 1em;
+  }
+  background: linear-gradient(to left, #f7f7f7 80%, #eee 100%);
+  border-radius: 0.1em 0.5em 0.5em 0.1em;
+}
+.back {
+  &::after {
+    left: 1em;
+  }
+  background-image: linear-gradient(to right, #f7f7f7 80%, #eee 100%);
+  border-radius: 0.5em 0.1em 0.1em 0.5em;
+}
+
+.front.cover {
+  background: radial-gradient(
+      circle farthest-corner at 80% 20%,
+      hsl(150 80% 20% / 0.1) 0%,
+      hsl(170 60% 10% / 0.05) 100%
+    ),
+    hsl(231, 32%, 29%) 50% / cover;
+  color: hsl(200 30% 98%);
+}
+
+.back.cover {
+  background: radial-gradient(
+      circle farthest-corner at 80% 20%,
+      hsl(150 80% 20% / 0.1) 0%,
+      hsl(170 60% 10% / 0.05) 100%
+    ),
+    hsl(231, 32%, 29%) 50% / cover;
+  color: hsl(200 30% 98%);
+}
+
+/* Updated styles for content page */
+.content-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.content-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em; /* Reduced padding */
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0.1px);
+}
+
+.content-text h2 {
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 0.1em; /* Increase spacing between items */
+}
+
+/* Animal List  */
+#animal-list {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: -100px;
+  text-align: center;
+}
+
+#animal-list li {
+  font-size: 1em; /* Increase font size */
+  margin-bottom: 0.1em; /* Increase spacing between items */
+}
+
+#animal-list img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+#animal-list span {
+  font-weight: bold;
+  color: #555;
+  margin-left: 10px;
+}
+
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0);
+  overflow-y: auto;
+  z-index: 2;
+}
+
+/* Koala image container */
+.koala-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #af7c51;
+  position: relative;
+  z-index: 10;
+}
+
+#koala-image {
+  width: 100%;
+  height: auto;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.api-content {
+  flex: 1 1 auto;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  border-radius: 8px;
+  overflow-y: auto;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+#data-info h2 {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+#species-info h2 {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+#species-info p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.back::after {
+  z-index: 3;
+}

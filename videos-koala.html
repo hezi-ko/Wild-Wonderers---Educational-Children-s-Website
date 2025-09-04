@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals Videos</title>
+    <link rel="stylesheet" href="css/common_style.css" />
+    <link rel="stylesheet" href="css/videos-koala.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- NAV SECTION -->
+    <header class="nav-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img
+            src="media/images/logo.png"
+            alt="Wild Wonders Logo"
+            class="logo"
+          />
+        </a>
+        <a href="index.html">
+          <h1 class="site-title">Wild Wonders</h1>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html"><button class="nav-button">HOME</button></a>
+        <a href="videos.html"
+          ><button class="nav-button active">VIDEOS</button></a
+        >
+        <a href="games.html"><button class="nav-button">GAMES</button></a>
+        <a href="info.html"><button class="nav-button">INFO</button></a>
+      </nav>
+    </header>
+
+    <!-- Return button -->
+    <div class="return-button-container">
+      <a href="videos.html">
+        <img
+          src="media/images/icon/back button.png"
+          alt="Return to Animals!"
+          class="return-button"
+        />
+      </a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="container">
+        <!-- Sidebar with animal list -->
+        <aside class="sidebar">
+          <ul>
+            <li id="koala" class="highlight">
+              <img
+                src="media/images/Koala AI.png"
+                alt="Koala Image"
+                class="side-image"
+                id="koala-image"
+              />
+              <p>KOALA</p>
+            </li>
+            <li id="kangaroo">KANGAROO</li>
+            <li id="Crocodile">CROCODILE</li>
+            <li id="shark">SHARK</li>
+            <li id="dingo">DINGO</li>
+            <li id="emu">EMU</li>
+            <li id="snake">SNAKE</li>
+            <li id="possum">POSSUM</li>
+          </ul>
+        </aside>
+
+        <!-- Main video area -->
+        <div id="video-area">
+          <!-- YouTube IFrame  -->
+          <div id="player"></div>
+
+          <!-- Related videos section -->
+          <div id="related-videos">
+            <div class="related-video" data-video="oI3ADcDH0Uc">
+              <img
+                src="https://img.youtube.com/vi/oI3ADcDH0Uc/hqdefault.jpg"
+                alt="Video 1"
+              />
+              <p>Just Joking LOL</p>
+            </div>
+            <div class="related-video" data-video="TNnCa3afq1o">
+              <img
+                src="https://img.youtube.com/vi/TNnCa3afq1o/hqdefault.jpg"
+                alt="Video 2"
+              />
+              <p>Flying Airplanes</p>
+            </div>
+            <div class="related-video" data-video="VcCJqumjJIQ">
+              <img
+                src="https://img.youtube.com/vi/VcCJqumjJIQ/hqdefault.jpg"
+                alt="Video 3"
+              />
+              <p>Venomous Sea Flower</p>
+            </div>
+            <div class="related-video" data-video="HKNMrYCxEQs">
+              <img
+                src="https://img.youtube.com/vi/HKNMrYCxEQs/hqdefault.jpg"
+                alt="Video 4"
+              />
+              <p>Weird Animals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of container -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- References link in the center -->
+      <div class="center-wrapper">
+        <a href="reference.html" class="references-link">
+          <p class="references">Click here for all references</p>
+        </a>
+      </div>
+      <!-- Contact link on the right -->
+      <div class="contact-wrapper">
+        <a href="contact.html" class="contact-link">
+          <img
+            src="media/images/icon/contact.png"
+            alt="icon"
+            class="contact-icon"
+          />
+          <p class="contact">CONTACT US</p>
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/videos-koala.js"></script>
+  </body>
+</html>

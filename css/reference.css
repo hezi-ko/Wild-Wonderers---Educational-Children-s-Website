@@ -1,0 +1,80 @@
+/* Main block for book style */
+.book-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #583c12;
+  max-width: 1300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Styles for left and right pages */
+.page {
+  width: 48%;
+  background-color: white;
+  margin: 0 10px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Left page content: displaying title and image */
+.left-page {
+  height: 650px;
+  width: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Title style */
+.left-page h2 {
+  font-size: 36px;
+  color: white;
+  background-color: #a8c27e;
+  padding: 5px 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+/* Paragraph and list styles */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+li {
+  margin-bottom: 8px;
+}

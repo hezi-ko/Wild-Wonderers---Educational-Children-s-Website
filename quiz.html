@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals Quiz</title>
+    <link rel="stylesheet" href="css/common_style.css" />
+    <link rel="stylesheet" href="css/quiz.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV SECTION -->
+    <header class="nav-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img
+            src="media/images/logo.png"
+            alt="Wild Wonders Logo"
+            class="logo"
+          />
+        </a>
+        <a href="index.html">
+          <h1 class="site-title">Wild Wonders</h1>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html"><button class="nav-button">HOME</button></a>
+        <a href="videos.html"><button class="nav-button">VIDEOS</button></a>
+        <a href="games.html"
+          ><button class="nav-button active">GAMES</button></a
+        >
+        <a href="info.html"><button class="nav-button">INFO</button></a>
+      </nav>
+    </header>
+
+    <!-- MIDDLE SECTION -->
+    <div class="return-button-container">
+      <a href="games.html">
+        <img
+          src="media/images/icon/back button.png"
+          alt="Return to Games"
+          class="return-button"
+      /></a>
+    </div>
+    <div class="content">
+      <div class="quiz-title">QUIZ</div>
+      <div id="quiz-form">
+        <!-- Quiz questions will be injected here -->
+      </div>
+      <div class="button-container">
+        <button type="button" class="check-button">Check</button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- References link in the center -->
+      <div class="center-wrapper">
+        <a href="reference.html" class="references-link">
+          <p class="references">Click here for all references</p>
+        </a>
+      </div>
+      <!-- Contact link on the right -->
+      <div class="contact-wrapper">
+        <a href="contact.html" class="contact-link">
+          <img
+            src="media/images/icon/contact.png"
+            alt="icon"
+            class="contact-icon"
+          />
+          <p class="contact">CONTACT US</p>
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/quiz.js"></script>
+  </body>
+</html>

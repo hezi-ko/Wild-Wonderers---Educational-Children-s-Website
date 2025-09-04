@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: "Playpen Sans", sans-serif;
+  background-color: #f5f0d9;
+}
+
+.content {
+  background-color: #a8c27e;
+  border-radius: 40px;
+  padding: 20px;
+  width: 90%;
+  position: fixed;
+  top: 140px;
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.puzzle-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.difficulty-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+  margin-left: 90px; /* 向右移动20px */
+}
+
+.difficulty-button {
+  background-color: #8b4513;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  width: 120px;
+  text-align: center;
+}
+
+.difficulty-button:hover {
+  background-color: #654321;
+}
+
+.scrambled-board,
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 默认3x3拼图 */
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%; /* 将宽度增加到原来的50% */
+  max-width: 600px; /* 增加最大宽度到600px */
+  aspect-ratio: 1 / 1; /* 确保区域为正方形 */
+  border: 2px solid #537023;
+  background-color: #f5f0d9;
+  border-radius: 10px;
+}
+
+.puzzle-board {
+  border: 2px dashed #537023;
+}
+
+.puzzle-piece {
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-size: 300% 300%; /* 根据拼图块数设置 */
+}
+
+.puzzle-piece img {
+  display: none; /* 隐藏图片元素，使用背景图 */
+}
+
+/* Styles for the custom feedback modal */
+.feedback-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 24px;
+  color: #537023;
+  margin-bottom: 10px;
+}
+
+.modal-message {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px; /* Adds spacing between buttons */
+}
+.play-again-button,
+.try-next-level-button {
+  background-color: #607d3b;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 25px; /* More rounded corners for a friendlier look */
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-again-button:hover,
+.try-next-level-button:hover {
+  transform: translateY(-3px); /* Adds a slight lift on hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+.play-again-button:active,
+.try-next-level-button:active {
+  transform: translateY(0); /* Removes lift on click */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Adjusts shadow on click */
+}

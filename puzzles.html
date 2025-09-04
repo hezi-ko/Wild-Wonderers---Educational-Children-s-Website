@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals games - Puzzles</title>
+    <link rel="stylesheet" href="css/common_style.css" />
+    <link rel="stylesheet" href="css/puzzles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV SECTION -->
+    <header class="nav-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img
+            src="media/images/logo.png"
+            alt="Wild Wonders Logo"
+            class="logo"
+          />
+        </a>
+        <a href="index.html">
+          <h1 class="site-title">Wild Wonders</h1>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html"><button class="nav-button">HOME</button></a>
+        <a href="videos.html"><button class="nav-button">VIDEOS</button></a>
+        <a href="games.html"
+          ><button class="nav-button active">GAMES</button></a
+        >
+        <a href="info.html"><button class="nav-button">INFO</button></a>
+      </nav>
+    </header>
+
+    <!-- MIDDLE SECTION -->
+    <div class="return-button-container">
+      <a href="games.html">
+        <img
+          src="media/images/icon/back button.png"
+          alt="Return to Games"
+          class="return-button"
+        />
+      </a>
+    </div>
+
+    <div class="content">
+      <div class="puzzle-container">
+        <div class="difficulty-buttons">
+          <button class="difficulty-button" onclick="createPuzzle(3)">
+            Easy
+          </button>
+          <button class="difficulty-button" onclick="createPuzzle(5)">
+            Medium
+          </button>
+          <button class="difficulty-button" onclick="createPuzzle(7)">
+            Hard
+          </button>
+        </div>
+        <div class="scrambled-board" id="scrambledBoard"></div>
+        <div class="puzzle-board" id="puzzleBoard"></div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK MODAL FOR NORMAL LEVELS -->
+    <div id="feedbackModal" class="feedback-modal">
+      <div class="modal-content">
+        <h2 class="modal-title">🎉You Did It!🎉</h2>
+        <p class="modal-message">Congratulations on completing the puzzle!</p>
+        <div class="button-group">
+          <button class="play-again-button" onclick="playAgain()">
+            Play Again!
+          </button>
+          <button class="try-next-level-button" onclick="tryNextLevel()">
+            Try Next Level?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK MODAL FOR HARD LEVEL -->
+    <div id="hardFeedbackModal" class="feedback-modal">
+      <div class="modal-content">
+        <h2 class="modal-title">🌟 Incredible Job! 🌟</h2>
+        <p class="modal-message">
+          You conquered the hard puzzle. You're a puzzle master!
+        </p>
+        <div class="button-group">
+          <button class="play-again-button" onclick="playAgain()">
+            Play Again!
+          </button>
+          <button class="try-next-level-button" onclick="tryNextLevel()">
+            Next Challenge!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- References link in the center -->
+      <div class="center-wrapper">
+        <a href="reference.html" class="references-link">
+          <p class="references">Click here for all references</p>
+        </a>
+      </div>
+      <!-- Contact link on the right -->
+      <div class="contact-wrapper">
+        <a href="contact.html" class="contact-link">
+          <img
+            src="media/images/icon/contact.png"
+            alt="icon"
+            class="contact-icon"
+          />
+          <p class="contact">CONTACT US</p>
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/puzzles.js"></script>
+  </body>
+</html>

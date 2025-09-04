@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wild Wonders</title>
+    <link rel="stylesheet" href="css/common_style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV SECTION-->
+    <header class="nav-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img
+            src="media/images/logo.png"
+            alt="Wild Wonders Logo"
+            class="logo"
+          />
+        </a>
+
+        <a href="index.html">
+          <h1 class="site-title">Wild Wonders</h1>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" id="home-btn"
+          ><button class="nav-button active">HOME</button></a
+        >
+        <a href="videos.html" id="video-btn"
+          ><button class="nav-button">VIDEOS</button></a
+        >
+        <a href="games.html" id="games-btn"
+          ><button class="nav-button">GAMES</button></a
+        >
+        <a href="info.html" id="info-btn"
+          ><button class="nav-button">INFO</button></a
+        >
+      </nav>
+    </header>
+
+    <div id="loading-screen">
+      <img
+        id="loading-background"
+        src="media/images/loading.gif"
+        alt="Loading Background"
+        class="loading-background"
+      />
+      <div class="element">
+        <img
+          id="loading-icon"
+          src="media/images/loading.svg"
+          alt="loading icon"
+        />
+      </div>
+
+      <!-- loading message -->
+      <div id="loading-message" class="loading-message">
+        <svg class="svg-defs">
+          <defs>
+            <path id="myPath1" d="M-100,150 A630,450 0 0,1 1000,100" />
+            <path id="myPath2" d="M170,250 A350,450 0 0,1 750,250" />
+          </defs>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="30 -170 860 380"
+          class="welcome-svg"
+        >
+          <text class="text-1">
+            <textPath
+              xlink:href="#myPath1"
+              startOffset="50%"
+              text-anchor="middle"
+            >
+              WELCOME TO WILD WONDERS!
+            </textPath>
+          </text>
+          <text class="text-2">
+            <textPath
+              xlink:href="#myPath2"
+              startOffset="50%"
+              text-anchor="middle"
+            >
+              WUNYA!
+            </textPath>
+          </text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- CTA Tour Guide -->
+    <div id="cta-overlay" class="hidden"></div>
+    <div id="cta-card" class="hidden">
+      <button id="cta-close" aria-label="Close">&times;</button>
+      <div class="card-inner">
+        <div class="card-header">
+          <h2 id="cta-title">WELCOME!</h2>
+        </div>
+        <div class="card-content">
+          <p id="cta-content">Let's take a quick tour of our Wild Wonders!</p>
+        </div>
+        <div class="card-footer">
+          <button id="cta-next" class="next-btn">NEXT</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIDDLE SECTION -->
+    <main class="main-content">
+      <h2><strong>Ready to meet some QLD animal buddies?</strong></h2>
+      <div class="carousel">
+        <div class="carousel__item carousel__item--left">
+          <img src="media/images/gallery/QM-C (1).jpg" alt="Crocodile" />
+          <div class="carousel__text">
+            <h3>Fearsome Crocodile</h3>
+            <p>King of the river, but always with a grin.</p>
+          </div>
+        </div>
+        <div id="carousel-main" class="carousel__item carousel__item--main">
+          <img src="media/images/gallery/QM-KA (4).jpg" alt="Koala" />
+          <div class="carousel__text">
+            <h3>Cuddly Koala</h3>
+            <p>Loves to munch on eucalyptus leaves all day!</p>
+          </div>
+        </div>
+        <div class="carousel__item carousel__item--right">
+          <img src="media/images/gallery/QM-D (1).jpg" alt="Dingo" />
+          <div class="carousel__text">
+            <h3>Daring Dingo</h3>
+            <p>Australia’s wild dog, always on the lookout.</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-C (2).jpg" alt="Crocodiel" />
+          <div class="carousel__text">
+            <h3>Snapping Crocodile</h3>
+            <p>Powerful jaws and a love for water.</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-D (2).jpg" alt="Dingo" />
+          <div class="carousel__text">
+            <h3>Stealthy Dingo</h3>
+            <p>Silent and swift, master of the outback.</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-E (1).jpg" alt="Emu" />
+          <div class="carousel__text">
+            <h3>Speedy Emu</h3>
+            <p>Running fast across the plains, no need to fly.</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-E (2).jpg" alt="Emu" />
+          <div class="carousel__text">
+            <h3>Tall Emu</h3>
+            <p>
+              Standing proud and tall, the second largest bird in the world.
+            </p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-K (2).jpg" alt="Kangaroo" />
+          <div class="carousel__text">
+            <h3>Bouncing Kangaroo</h3>
+            <p>Jumping around with its joey in the pouch.</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-K (4).jpg" alt="Kangaroo" />
+          <div class="carousel__text">
+            <h3>Playful Kangaroo</h3>
+            <p>Loves to hop around and explore the grasslands.</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-KA (3).jpg" alt="Koala" />
+          <div class="carousel__text">
+            <h3>Sleepy Koala</h3>
+            <p>Naps all day long, only wakes up for a snack!</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-P (1).jpg" alt="Possum" />
+          <div class="carousel__text">
+            <h3>Possum</h3>
+            <p>Nocturnal and curious, the possum loves to explore at night!</p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-P (2).jpg" alt="Possum" />
+          <div class="carousel__text">
+            <h3>Possum</h3>
+            <p>
+              This possum enjoys climbing trees and exploring the forest canopy
+              at night.
+            </p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-S (1).jpg" alt="Snake" />
+          <div class="carousel__text">
+            <h3>Tree Snake</h3>
+            <p>
+              Slithering through the branches, this snake is always on the
+              lookout for its next adventure.
+            </p>
+          </div>
+        </div>
+        <div class="carousel__item">
+          <img src="media/images/gallery/QM-S (2).jpg" alt="Snake" />
+          <div class="carousel__text">
+            <h3>Python</h3>
+            <p>
+              Wrapped snugly around its eggs, this python is a dedicated parent.
+            </p>
+          </div>
+        </div>
+        <div class="carousel__btns">
+          <button class="carousel__btn" id="leftBtn">
+            <img src="media/images/icon/left.png" alt="Left" />
+          </button>
+          <button class="carousel__btn" id="rightBtn">
+            <img src="media/images/icon/right.png" alt="Right" />
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- References link in the center -->
+      <div class="center-wrapper">
+        <a href="reference.html" class="references-link">
+          <p class="references">Click here for all references</p>
+        </a>
+      </div>
+      <!-- Contact link on the right -->
+      <div class="contact-wrapper">
+        <a href="contact.html" class="contact-link">
+          <img
+            src="media/images/icon/contact.png"
+            alt="icon"
+            class="contact-icon"
+          />
+          <p class="contact">CONTACT US</p>
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/index.js"></script>
+  </body>
+</html>

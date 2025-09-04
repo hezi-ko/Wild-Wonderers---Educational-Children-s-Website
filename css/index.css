@@ -1,0 +1,452 @@
+main h1{
+  color: #6b8e23;
+  font-size: 30px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+main h2 {
+  color: #6b8e23;
+  font-size: 30px;
+  margin-top: -40px !important; 
+  margin-bottom: 40px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* loading page */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.15s ease-out, visibility 0s 1s; 
+  opacity: 1;
+}
+
+#loading-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -1; 
+}
+
+#loading-screen.hidden {
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+#main-content {
+  opacity: 0; 
+  transition: opacity 0.05s ease-in; /
+}
+
+/* fade in*/
+#main-content.active {
+  opacity: 1; 
+}
+
+svg {
+  width: 500vw;
+  min-width: 400px;
+  max-width: 600px;
+  max-height: 30vh;
+}
+
+/* Koala */
+.element {
+  animation: spin-and-grow 5s ease-out 1, jump 2s ease-in-out infinite;
+  animation-delay: 0s, 4s; /* Make sure spin-and-grow finsihs then jumping */
+  transform-box: fill-box;
+  transform: translateY(55px); 
+  z-index: 1; 
+}
+
+/* Koala's movement */
+@keyframes spin-and-grow {
+  0% {
+    transform: translateY(55px) rotate(0);
+  }
+  25% {
+    transform: translateY(55px) rotate(360deg); 
+  }
+  50% {
+    transform: translateY(55px) scale(1.5);
+  }
+  75% {
+    transform: translateY(55px) rotate(360deg); 
+  }
+  100% {
+    transform: translateY(55px) scale(1); 
+  }
+}
+
+/* Koala jump */
+@keyframes jump {
+  0% {
+    transform: translateY(55px); 
+  }
+  25% {
+    transform: translateY(30px); 
+  }
+  50% {
+    transform: translateY(55px); 
+  }
+  75% {
+    transform: translateY(30px); 
+  }
+  100% {
+    transform: translateY(55px); 
+  }
+}
+
+/* welcome's CSS */
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.loading-message {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
+  text-align: center;
+}
+
+.welcome-svg {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.text-1 {
+  font-size: 68px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  fill: #4d7b4b; 
+}
+
+.text-2 {
+  font-size: 90px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  fill: #9e722f;
+}
+
+
+
+/* main content hidding during loading page */
+#main-content {
+  display: none;
+}
+
+
+/* Carousel items */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 40rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; 
+}
+
+.carousel__item {
+  position: absolute;
+  height: 40rem;
+  width: 35rem;
+  border-radius: 10px;
+  overflow: visible;
+  /* box-shadow: 0 1rem 4rem rgba(0, 0, 0, .30);  */
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.carousel__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+  z-index: 2; 
+  position: relative; 
+  cursor: default;
+  pointer-events: auto; 
+}
+
+.carousel__text {
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity .2s;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,.5);
+  padding: 2rem 1rem;
+  color: #fff;
+  box-sizing: border-box; 
+  border-radius: 10px;
+  font-size: 1.2rem; 
+  pointer-events: none; 
+}
+
+
+.carousel__item--main {
+  transform: translateX(0) scale(1);
+  z-index: 3; 
+  cursor: default;
+  position: relative; 
+  pointer-events: auto; 
+  
+}
+
+
+.carousel__item--main:hover {
+  transform: translateX(0) scale(1.05);
+  cursor: default;
+}
+
+.carousel__item--main:hover > .carousel__text {
+  opacity: 1;
+}
+
+
+
+.carousel__item--left {
+  transform: translateX(-60%) scale(0.9); 
+  z-index: 2;
+}
+
+
+.carousel__item--right {
+  transform: translateX(60%) scale(0.9); 
+  z-index: 2;
+}
+
+.carousel__item--left img, .carousel__item--right img {
+  filter: grayscale(80%);
+}
+
+
+.carousel__btns {
+  position: absolute;
+  top: 40%;
+  width: 85%; 
+  display: flex;
+  justify-content: space-between; 
+  z-index: 5;
+}
+
+.carousel__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; 
+  border: none; 
+  padding: 0; 
+  cursor: default;
+}
+
+.carousel__btn img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+
+.carousel__btn:hover {
+  transform: translateX(0) scale(1.15);
+}
+
+
+/* CTA Tour Guide Styles */
+#cta-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000; 
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #607d3b;
+  padding: 20px;
+  border-radius: 40px;
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  position: sticky;
+  top: 20px;
+  z-index: 1002;
+}
+
+.nav-button {
+  background-color: #8b5e26;
+  color: #e8d0aa;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 3px 3px 0 #4c5c31;
+  cursor: pointer;
+  z-index: 1001; 
+  transition: all 0.3s ease; 
+}
+
+
+.nav-button.on-top {
+  z-index: 1003; 
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); 
+  background-color: #f6e6c8;
+  color: #372b14; 
+  border: 2px solid #372b14;
+}
+
+/* 其他樣式保持不變 */
+.nav-button.active {
+  background-color: #f6e6c8;
+  color: #372b14; 
+  border: 2px solid #372b14;
+}
+
+.nav-button:hover {
+  background-color: #a67f3a;
+}
+
+
+#carousel-main.highlight {
+  z-index: 1003; 
+  transform: scale(1.05); 
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+  transition: all 0.3s ease;
+}
+
+
+.contact-wrapper {
+  position: relative;
+  z-index: 1005; 
+}
+
+.contact-wrapper.highlight {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+
+/* CTA  */
+#cta-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #a3aa67;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1004;
+  padding: 25px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.card-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #5a4f41;
+  margin: 10px;
+  text-align: center;
+  width: 100%;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* X  */
+#cta-close {
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #5a4f41;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  top: -15px;
+  right: 10px;
+}
+
+
+.card-content {
+  font-size: 18px;
+  color: #5a4f41;
+  padding-bottom: 25px;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* NEXT  */
+.card-footer {
+  text-align: center;
+}
+
+#cta-next {
+  background-color: #d1c191;
+  color: #5a4f41;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+#cta-next::after {
+  content: '>';
+  margin-left: 8px;
+  font-size: 22px;
+}
+
+#cta-next:hover {
+  background-color: #c1b181;
+}
+
+
+.card-inner {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+
+.hidden {
+  display: none;
+}

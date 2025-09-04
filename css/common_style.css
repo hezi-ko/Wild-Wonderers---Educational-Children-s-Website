@@ -1,0 +1,161 @@
+/* common_style.css */
+
+/*Below are basic*/
+
+* {
+  font-family: "Playpen Sans", sans-serif !important;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1d9;
+}
+
+/*Below are NAV*/
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #607d3b;
+  padding: 20px;
+  border-radius: 40px;
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 20px;
+}
+.nav-button {
+  background-color: #8b5e26;
+  color: #e8d0aa;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 3px 3px 0 #4c5c31;
+  cursor: pointer;
+}
+
+.nav-button.active {
+  background-color: #372b14;
+  color: #f6e6c8;
+  border: 2px solid black;
+}
+
+.nav-button:hover {
+  background-color: #a67f3a;
+}
+
+/*Below are main-content*/
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  /* padding-top: 5vh; */
+  overflow-y: auto;
+}
+
+/*Below are Footer*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #254001;
+  height: 80px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Center the reference link */
+.center-wrapper {
+  position: absolute;
+  left: 1%;
+}
+
+/* Contact us */
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto; /* Push the contact-wrapper to the right */
+  gap: 20px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline from link */
+  color: black; /* Link text color */
+}
+
+.contact-icon {
+  width: 20px; /* Icon size */
+  height: 20px;
+  margin-right: 10px; /* Spacing between icon and text */
+}
+
+.contact {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e8d0aa;
+}
+
+/* References link styling */
+.references-link {
+  text-decoration: none;
+  color: #e8d0aa;
+}
+
+.references-link:hover {
+  text-decoration: none; /* Remove underline from link */
+}
+
+.return-button-container {
+  padding: 20px;
+}

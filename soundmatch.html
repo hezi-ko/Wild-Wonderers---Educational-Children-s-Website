@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals games</title>
+    <link rel="stylesheet" href="css/common_style.css" />
+    <link rel="stylesheet" href="css/soundmatch.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV SECTION-->
+    <header class="nav-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img
+            src="media/images/logo.png"
+            alt="Wild Wonders Logo"
+            class="logo"
+          />
+        </a>
+
+        <a href="index.html">
+          <h1 class="site-title">Wild Wonders</h1>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html"><button class="nav-button">HOME</button></a>
+        <a href="videos.html"><button class="nav-button">VIDEOS</button></a>
+        <a href="games.html"
+          ><button class="nav-button active">GAMES</button></a
+        >
+        <a href="info.html"><button class="nav-button">INFO</button></a>
+      </nav>
+    </header>
+
+    <!-- MIDDLE SECTION -->
+    <!-- <div id="return-button-soundmatch">
+      <a href="games.html">
+        <img src="media/images/icon/back button.png" alt="Return to Games!" />
+      </a>
+    </div> -->
+
+    <div class="main-container">
+      <!-- <h1>SOUND MATCH</h1>
+
+      <h3>Drag and Drop</h3> -->
+
+      <!-- <img
+        src="../media/images/sound_matching/drag_icon.png"
+        alt="Drag and drop sounds to images"
+        id="drag"
+      /> -->
+
+      <div class="title">
+        <h1>SOUND MATCH</h1>
+      </div>
+
+      <div class="score-container">
+        <h2 class="score-elements" id="correct">0</h2>
+        <img
+          src="media/images/sound_matching/star.png"
+          alt="Correct Questions"
+          class="score-elements"
+        />
+        <h2 class="score-elements" id="completed">0</h2>
+        <img
+          src="media/images/sound_matching/checklist.png"
+          alt="Questions Answered"
+          class="score-elements"
+        />
+      </div>
+
+      <div class="sound-container">
+        <button class="sound-button" id="sound1">
+          <img src="media/images/sound_button.png" alt="" />
+        </button>
+      </div>
+
+      <div class="image-container">
+        <button class="animal-button" id="animal_1" onclick="">
+          <img
+            src="media/images/sound_matching/emu.png"
+            alt="Emu Picture"
+            id="image_1"
+            class="animal-image"
+          />
+        </button>
+
+        <button class="animal-button" id="animal_2">
+          <img
+            src="media/images/sound_matching/crocodile.png"
+            alt="Crocodile Picture"
+            id="image_2"
+            class="animal-image"
+          />
+        </button>
+
+        <button class="animal-button" id="animal_3">
+          <img
+            src="media/images/sound_matching/koala.png"
+            alt="Koala Picture"
+            id="image_3"
+            class="animal-image"
+          />
+        </button>
+      </div>
+    </div>
+
+    <!-- FEEDBACK MODAL FOR NORMAL LEVELS -->
+    <div id="feedbackModal" class="feedback-modal">
+      <div class="modal-content">
+        <h2 class="modal-title">🎉You Did It!🎉</h2>
+        <p class="modal-message" id="message-modal">
+          Congratulations on completing the sound matching game
+        </p>
+        <div class="button-group">
+          <button class="play-again-button" onclick="playAgain()">
+            Play Again!
+          </button>
+          <button class="return-button" onclick="returnToGames()">
+            Return to Games?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <!-- References link in the center -->
+      <div class="center-wrapper">
+        <a href="reference.html" class="references-link">
+          <p class="references">Click here for all references</p>
+        </a>
+      </div>
+      <!-- Contact link on the right -->
+      <div class="contact-wrapper">
+        <a href="contact.html" class="contact-link">
+          <img
+            src="media/images/icon/contact.png"
+            alt="icon"
+            class="contact-icon"
+          />
+          <p class="contact">CONTACT US</p>
+        </a>
+      </div>
+    </footer>
+
+    <script src="javascript/games.js" defer></script>
+  </body>
+</html>
