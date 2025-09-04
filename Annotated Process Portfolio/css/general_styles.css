@@ -1,0 +1,118 @@
+html,
+body {
+    margin:0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #D0E5F2;
+}
+
+.flex-header-container {
+    flex-shrink: 0;
+    flex-direction: column;
+    /* min-height: 100vh; */
+
+    background-color: #405927;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 150px 1fr;
+    /* padding: 2vh 5vw; */
+    /* width: 75vw;*/
+    /* margin: 0 auto; */
+}
+
+.logo {
+    /* background-color: black; */
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    margin-left: 10vw;
+    object-fit: cover;
+    text-align: center;
+}
+
+#logo-image { 
+    max-height: 95%;
+    padding-top: 2px;
+}
+
+.home-header {
+    /* background-color: red; */
+    /* color: white; */
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 30px;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap;
+    color: #F2E1C2;
+}
+
+.page-links {
+    /* background-color: black; */
+    background-color: #F2E1C2;
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    white-space: nowrap;
+    
+}
+
+.page-link-button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    color: black;
+    background-color: #F2E1C2;
+    padding: 15px 25px;
+    border-style: none;
+    margin: auto;
+    margin-right: 40px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.page-link-button:hover {
+    color: white;
+    background-color: black;
+}
+
+.individual-dropdown a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.individual-dropdown {
+    display: block;
+    position: absolute;
+    margin-left: 100px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    overflow: auto;
+}
+
+/* Show the dropdown menu on hover */
+/* .page-link-button:hover .logo {
+    background-color: red;
+    display: none;
+} */

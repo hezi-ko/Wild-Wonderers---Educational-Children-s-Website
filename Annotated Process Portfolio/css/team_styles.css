@@ -1,0 +1,487 @@
+/* h2 {
+    font-size: 40px;
+} */
+
+p {
+    font-weight: 300; 
+    font-size: 20px;
+}
+
+#banner {
+    color: white;
+    background-color: black;
+}
+
+.main-content {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.accordion {
+
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 50px;
+    color: black;
+    background-color: #72313D;
+    /* padding: 10px 25px; */
+    border-style: none;
+    margin: auto;
+    margin-right: 40px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+
+.panel {
+    padding: 0 18px;
+    background-color: #474e5d;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+.accordion:after {
+    color: pink;
+    content: '\2795'; /* Unicode character for "plus" sign (+) */
+    font-size: 30px;
+    float: right;
+    padding-right: 20px;
+    padding-top: 20px;
+    /* margin-left: 5px; */
+}
+  
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* #Four_A {
+    margin-top: 10vh;
+    background-color: #36474D;
+} */
+
+#Four_A {
+    margin-top: 6vh;
+    background-color: #43AED9;
+    padding: 50px 50px 50px 50px;
+}
+
+#logo {
+        width: 80vw;
+        height: 65vh;
+        margin: auto;
+        object-fit: contain;
+}
+
+#CRJ7 {
+    width: 80vw;
+    height: 65vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+/* #Four_B {
+    background-color: #43AED9;
+} */
+
+#Four_B  {
+    background-color: #316073;
+    padding: 50px 50px 50px 50px;
+}
+
+.sketches {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 6vh 6vw;
+    height: auto;
+    padding: 3em;
+    border-radius: 40px;
+}
+
+#sketch_a {
+    background-color: red;
+    grid-column: 2 / span 1;
+    width: 80vw;
+    height: 65vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+#sketch_b {
+    /* background-color: black; */
+    grid-column: 1 / span 1;
+    width: 80vw;
+    height: 65vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+#schedule {
+    display: block;
+    text-align: center;
+    /* width: 80vw; */
+    height: 80vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+#Four_C {
+    /* background-color: #31728B; */
+    background-color: #7BC5E3;
+    padding: 50px 50px 50px 50px;
+}
+
+#email {
+    display: block;
+    text-align: center;
+    /* width: 80vw; */
+    height: 100vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+#figma {
+    display: block;
+    text-align: center;
+    /* width: 80vw; */
+    height: 100vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+#code {
+    display: block;
+    text-align: center;
+    /* width: 80vw; */
+    height: 100vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+
+#Four_D {
+    background-color: #31728B;
+    padding: 50px 50px 50px 50px;
+    /* background-color: #98BAC8; */
+}
+
+#redesign {
+    display: block;
+    text-align: center;
+    /* width: 80vw; */
+    height: 100vh;
+    margin: auto;
+    object-fit: contain;
+    margin-bottom: 10vh;
+}
+
+.nado {
+    margin-bottom: 6vh;
+}
+
+/* .nado {
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#Four_A{
+    grid-column: 1 / span 1;
+    grid-row: 1;
+}
+
+#Four_B{
+    grid-column: 1 / span 1;
+    grid-row: 2;
+}
+
+#Four_C{
+    grid-column: 1 / span 1;
+    grid-row: 3;
+}
+
+#Four_D{
+    grid-column: 1 / span 1;
+    grid-row: 4;
+} */
+
+* {
+box-sizing: border-box;
+}
+
+/* Set a background color */
+body {
+background-color: #474e5d;
+font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+position: relative;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+content: '';
+position: absolute;
+width: 6px;
+background-color: white;
+top: 0;
+bottom: 0;
+left: 50%;
+margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+padding: 10px 40px;
+position: relative;
+background-color: inherit;
+width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+content: '';
+position: absolute;
+width: 25px;
+height: 25px;
+right: -17px;
+background-color: white;
+border: 4px solid #FF9F55;
+top: 15px;
+border-radius: 50%;
+z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+left: 0;
+}
+
+/* Place the container to the right */
+.right {
+left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+content: " ";
+height: 0;
+position: absolute;
+top: 22px;
+width: 0;
+z-index: 1;
+right: 30px;
+border: medium solid white;
+border-width: 10px 0 10px 10px;
+border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+content: " ";
+height: 0;
+position: absolute;
+top: 22px;
+width: 0;
+z-index: 1;
+left: 30px;
+border: medium solid white;
+border-width: 10px 10px 10px 0;
+border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+left: -16px;
+}
+
+/* The actual content */
+.content {
+padding: 20px 30px;
+background-color: white;
+position: relative;
+border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+.timeline::after {
+    left: 31px;
+}
+
+/* Full-width containers */
+.container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+}
+
+/* Make sure that all arrows are pointing leftwards */
+.container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Make sure all circles are at the same spot */
+.left::after, .right::after {
+    left: 15px;
+}
+
+/* Make all right containers behave like the left ones */
+.right {
+    left: 0%;
+}
+}
+
+.text-box {
+    background-color: white;
+    /* width: 80vw; */
+    margin: 6vh 6vw;
+    height: auto;
+    padding: 3em;
+    border-radius: 40px;
+    /* padding-bottom: 10px; */
+    /* margin: auto; */
+}
+
+.crj-box {
+    background-color: #FFF59C;
+    /* width: 80vw; */
+    margin: 6vh 6vw;
+    height: auto;
+    padding: 3em;
+    border-radius: 40px;
+    /* padding-bottom: 10px; */
+    /* margin: auto; */
+}
+
+#interaction_plan {
+    /* background-color: black; */
+    width: 80vw;
+    height: 80vh;
+    margin: 6vh 9vw;
+    object-fit: contain;
+}
+
+.individual-modal-gallery {
+    /* background-color: black; */
+    margin-top: 10vh;
+    margin-left: 5vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* gap: 20px; */
+    /* background-color: black; */
+    
+}
+
+/* Style the Image Used to Trigger the Modal */
+#modal_1 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  grid-column: 2 / span 1;
+}
+
+#modal_2 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  grid-column: 3 / span 1;
+}
+
+#modal_1:hover {opacity: 0.7;}
+#modal_2:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1300px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
